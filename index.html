@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Dukan - Your Modern E-commerce Destination</title>
+    
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+   
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; 
+        }
+        .icon-hover {
+            transition: color 0.3s ease-in-out;
+        }
+        .icon-hover:hover {
+            color: #4f46e5;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4f46e5;
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover {
+            color: #312e81; /
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="text-2xl font-bold text-gray-800">Apna Dukan</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="nav-link text-gray-600 font-medium">Home</a>
+                    <a href="#" class="nav-link text-gray-600 font-medium">Shop</a>
+                    <a href="#" class="nav-link text-gray-600 font-medium">New Arrivals</a>
+                    <a href="#" class="nav-link text-gray-600 font-medium">About</a>
+                    <a href="#" class="nav-link text-gray-600 font-medium">Contact</a>
+                </nav>
+
+                <!-- Header Icons -->
+                <div class="flex items-center space-x-5">
+                    <a href="#" class="text-gray-500 icon-hover"><i data-lucide="search" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-500 icon-hover"><i data-lucide="user" class="w-6 h-6"></i></a>
+                    <a href="#" class="relative text-gray-500 icon-hover">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <span class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="lg:hidden text-gray-500 icon-hover">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <nav class="flex flex-col p-4 space-y-4">
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Home</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Shop</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">New Arrivals</a>
+                <a href="Https://urajpatel.onecompiler.app/#" class="text-gray-600 hover:text-indigo-600">About</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-r from-indigo-50 to-purple-50 py-20 lg:py-32">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4 leading-tight">Summer Collection is Here</h1>
+                    <p class="text-lg text-gray-600 mb-8">Discover the latest trends in fashion. Fresh styles, vibrant colors, and unbeatable prices.</p>
+                    <a href="#" class="bg-indigo-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Featured Products</h2>
+                <p class="text-center text-gray-500 mb-12">Handpicked for you. The best of our collection.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover-effect">
+                        <img src="https://placehold.co/400x400/a3e635/ffffff?text=Product+1" alt="Product Image" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Modern Armchair</h3>
+                            <p class="text-indigo-600 font-bold mt-2">299.00</p>
+                            <button class="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover-effect">
+                        <img src="https://placehold.co/400x400/60a5fa/ffffff?text=Product+2" alt="Product Image" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Wireless Headphones</h3>
+                            <p class="text-indigo-600 font-bold mt-2">1149.00</p>
+                            <button class="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover-effect">
+                        <img src="https://placehold.co/400x400/f472b6/ffffff?text=Product+3" alt="Product Image" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Stylish Sunglasses</h3>
+                            <p class="text-indigo-600 font-bold mt-2">579.00</p>
+                            <button class="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover-effect">
+                        <img src="https://placehold.co/400x400/fbbf24/ffffff?text=Product+4" alt="Product Image" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Leather Backpack</h3>
+                            <p class="text-indigo-600 font-bold mt-2">199.00</p>
+                            <button class="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Section -->
+        <section class="bg-white py-16 sm:py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Shop by Category</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="relative rounded-lg overflow-hidden group card-hover-effect">
+                        <img src="https://placehold.co/600x400/34d399/ffffff?text=Women's+Fashion" alt="Women's Fashion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <h3 class="text-white text-2xl font-bold">Women's Fashion</h3>
+                        </div>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden group card-hover-effect">
+                        <img src="https://placehold.co/600x400/fb923c/ffffff?text=Men's+Fashion" alt="Men's Fashion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <h3 class="text-white text-2xl font-bold">Men's Fashion</h3>
+                        </div>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden group card-hover-effect sm:col-span-2 lg:col-span-1">
+                        <img src="https://placehold.co/600x400/818cf8/ffffff?text=Electronics" alt="Electronics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <h3 class="text-white text-2xl font-bold">Electronics</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription -->
+        <section class="bg-indigo-700 py-16">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
+                <p class="text-indigo-200 mb-8 max-w-2xl mx-auto">Get the latest updates on new products, upcoming sales, and special offers delivered right to your inbox.</p>
+                <form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+                    <button type="submit" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold mb-4">ShopSphere</h3>
+                    <p class="text-gray-400">Your one-stop shop for everything trendy and modern. We provide high-quality products at the best prices.</p>
+                </div>
+                <!-- Links -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Dukan - Your Modern E-commerce Destination</title>
+    
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+   
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; 
+        }
+        .icon-hover {
+            transition: color 0.3s ease-in-out;
+        }
+        .icon-hover:hover {
+            color: #4f46e5;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4f46e5;
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover {
+            color: #312e81; /
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="text-2xl font-bold text-gray-800">Apna Dukan</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="nav-link text-gray-600 font-medium">Home</a>
+                    <a href="#" class="nav-link text-gray-600 font-medium">Shop</a>
+                    <a href="#" class="nav-link text-gray-600 font-medium">New Arrivals</a>
+                    <a href="#" class="nav-link text-gray-600 font-medium">About</a>
+                    <a href="#" class="nav-link text-gray-600 font-medium">Contact</a>
+                </nav>
+
+                <!-- Header Icons -->
+                <div class="flex items-center space-x-5">
+                    <a href="#" class="text-gray-500 icon-hover"><i data-lucide="search" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-500 icon-hover"><i data-lucide="user" class="w-6 h-6"></i></a>
+                    <a href="#" class="relative text-gray-500 icon-hover">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <span class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="lg:hidden text-gray-500 icon-hover">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <nav class="flex flex-col p-4 space-y-4">
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Home</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Shop</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">New Arrivals</a>
+                <a href="Https://urajpatel.onecompiler.app/#" class="text-gray-600 hover:text-indigo-600">About</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-r from-indigo-50 to-purple-50 py-20 lg:py-32">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4 leading-tight">Summer Collection is Here</h1>
+                    <p class="text-lg text-gray-600 mb-8">Discover the latest trends in fashion. Fresh styles, vibrant colors, and unbeatable prices.</p>
+                    <a href="#" class="bg-indigo-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">Featured Products</h2>
+                <p class="text-center text-gray-500 mb-12">Handpicked for you. The best of our collection.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover-effect">
+                        <img src="https://placehold.co/400x400/a3e635/ffffff?text=Product+1" alt="Product Image" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Modern Armchair</h3>
+                            <p class="text-indigo-600 font-bold mt-2">299.00</p>
+                            <button class="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover-effect">
+                        <img src="https://placehold.co/400x400/60a5fa/ffffff?text=Product+2" alt="Product Image" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Wireless Headphones</h3>
+                            <p class="text-indigo-600 font-bold mt-2">1149.00</p>
+                            <button class="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover-effect">
+                        <img src="https://placehold.co/400x400/f472b6/ffffff?text=Product+3" alt="Product Image" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Stylish Sunglasses</h3>
+                            <p class="text-indigo-600 font-bold mt-2">579.00</p>
+                            <button class="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover-effect">
+                        <img src="https://placehold.co/400x400/fbbf24/ffffff?text=Product+4" alt="Product Image" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-gray-800">Leather Backpack</h3>
+                            <p class="text-indigo-600 font-bold mt-2">199.00</p>
+                            <button class="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Section -->
+        <section class="bg-white py-16 sm:py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Shop by Category</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="relative rounded-lg overflow-hidden group card-hover-effect">
+                        <img src="https://placehold.co/600x400/34d399/ffffff?text=Women's+Fashion" alt="Women's Fashion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <h3 class="text-white text-2xl font-bold">Women's Fashion</h3>
+                        </div>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden group card-hover-effect">
+                        <img src="https://placehold.co/600x400/fb923c/ffffff?text=Men's+Fashion" alt="Men's Fashion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <h3 class="text-white text-2xl font-bold">Men's Fashion</h3>
+                        </div>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden group card-hover-effect sm:col-span-2 lg:col-span-1">
+                        <img src="https://placehold.co/600x400/818cf8/ffffff?text=Electronics" alt="Electronics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <h3 class="text-white text-2xl font-bold">Electronics</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription -->
+        <section class="bg-indigo-700 py-16">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
+                <p class="text-indigo-200 mb-8 max-w-2xl mx-auto">Get the latest updates on new products, upcoming sales, and special offers delivered right to your inbox.</p>
+                <form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+                    <button type="submit" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold mb-4">ShopSphere</h3>
+                    <p class="text-gray-400">Your one-stop shop for everything trendy and modern. We provide high-quality products at the best prices.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <p class="text-gray-400">824237 Gaya,Bihar,India</p>
+                    <p class="text-gray-400">Email:surajpatel9022sp@gmail.com</p>
+                    <p class="text-gray-400">Phone:+917091135310</p>
+                    <div <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>2025 Suraj.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // M<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaushal Patel | Creative Technologist</title>
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Roboto Mono & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Outfit', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+        /* Glassmorphism Header */
+        .glass-header {
+            background: rgba(13, 17, 23, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #30363d;
+        }
+        /* Neon text effect */
+        .neon-text {
+            color: #58a6ff;
+            text-shadow: 0 0 5px #58a6ff, 0 0 10px #58a6ff, 0 0 20px #58a6ff;
+        }
+        /* Dotted background for hero */
+        .dotted-bg {
+            background-image: radial-gradient(#30363d 1px, transparent 0);
+            background-size: 30px 30px;
+        }
+        /* Project card hover effect */
+        .project-card {
+            border: 1px solid #30363d;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -15px rgba(88, 166, 255, 0.2);
+        }
+        /* Skill icon hover effect */
+        .skill-icon:hover i {
+            color: #58a6ff;
+            transform: scale(1.1);
+        }
+        .skill-icon i {
+            transition: all 0.3s ease;
+        }
+        /* Custom button style */
+        .btn-primary {
+            background-color: #238636;
+            border: 1px solid #30363d;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #2ea043;
+            border-color: #8b949e;
+        }
+        /* Animation for sections fading in on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <!-- Header & Navigation -->
+    <header class="glass-header sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black text-white font-mono">&lt;KP /&gt;</a>
+            <ul class="hidden md:flex items-center space-x-8 font-mono text-sm">
+                <li><a href="#about" class="hover:text-white transition-colors duration-300">/about</a></li>
+                <li><a href="#projects" class="hover:text-white transition-colors duration-300">/projects</a></li>
+                <li><a href="#contact" class="text-green-400 hover:text-green-300 transition-colors duration-300">/contact</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 font-mono text-sm">
+             <a href="#about" class="block py-2 hover:text-white">/about</a>
+             <a href="#projects" class="block py-2 hover:text-white">/projects</a>
+             <a href="#contact" class="block py-2 text-green-400 hover:text-green-300">/contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="dotted-bg py-24 md:py-40">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <p class="font-mono text-green-400 mb-4">Hi, my name is</p>
+                    <h1 class="text-5xl md:text-7xl font-black text-white mb-4">Kaushal Patel</h1>
+                    <h2 class="text-4xl md:text-6xl font-bold text-gray-400 mb-8">I build things for the web.</h2>
+                    <p class="max-w-2xl mx-auto text-lg text-gray-400 mb-10">
+                        I'm a creative technologist and software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.
+                    </p>
+                    <a href="#projects" class="btn-primary text-white font-bold py-3 px-8 rounded-lg text-lg">
+                        Check out my work!
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-2 text-white font-mono"><span class="text-green-400">01.</span> About Me</h2>
+                <div class="w-24 h-1 bg-green-400 mx-auto mb-12"></div>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-2/3">
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            Hello! My name is Kaushal and I enjoy creating things that live on the internet. My interest in web development started back in 2015 when I decided to try editing a custom Tumblr theme — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+                        </p>
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                           Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, and a huge corporation. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
+                        </p>
+                         <p class="text-gray-400 leading-relaxed">Here are a few technologies I've been working with recently:</p>
+                        <ul class="grid grid-cols-2 gap-2 mt-4 font-mono text-sm text-gray-400">
+                            <li class="before:content-['▹_'] before:text-green-400 before:mr-2">JavaScript (ES6+)</li>
+                            <li class="before:content-['▹_'] before:text-green-400 before:mr-2">React & Next.js</li>
+                            <li class="before:content-['▹_'] before:text-green-400 before:mr-2">TypeScript</li>
+                            <li class="before:content-['▹_'] before:text-green-400 before:mr-2">Node.js</li>
+                            <li class="before:content-['▹_'] before:text-green-400 before:mr-2">GraphQL</li>
+                            <li class="before:content-['▹_'] before:text-green-400 before:mr-2">Figma</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                            <img src="https://placehold.co/600x600/0d1117/c9d1d9?text=Kaushal" alt="About Me Image" class="rounded-lg shadow-xl w-full relative">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-2 text-white font-mono"><span class="text-green-400">02.</span> Some Things I've Built</h2>
+                <div class="w-24 h-1 bg-green-400 mx-auto mb-12"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="project-card bg-[#161b22] rounded-lg overflow-hidden p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fas fa-folder text-4xl text-green-400"></i>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Data Visualization Dashboard</h3>
+                        <p class="text-gray-400 mb-4 text-sm">A web app for visualizing financial data using D3.Kp, React, and a custom API.</p>
+                        <p class="font-mono text-xs text-gray-500">React D3.kp Chart.Kp</p>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="project-card bg-[#161b22] rounded-lg overflow-hidden p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fas fa-folder text-4xl text-green-400"></i>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Real-time Chat Application</h3>
+                        <p class="text-gray-400 mb-4 text-sm">A full-stack chat application featuring real-time messaging with WebSockets and user authentication.</p>
+                        <p class="font-mono text-xs text-gray-500">Node.js Socket.io Express</p>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="project-card bg-[#161b22] rounded-lg overflow-hidden p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fas fa-folder text-4xl text-green-400"></i>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI-Powered Article Summarizer</h3>
+                        <p class="text-gray-400 mb-4 text-sm">An application that uses a third-party AI API to summarize long articles into concise points.</p>
+                        <p class="font-mono text-xs text-gray-500">Next.js OpenAI </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-2xl font-bold text-center mb-2 text-green-400 font-mono">03. What's Next?</h2>
+                <h3 class="text-5xl font-black text-white mb-4">Get In Touch</h3>
+                <p class="max-w-xl mx-auto text-gray-400 mb-8">
+                    Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+                </p>
+                <a href="surajpatel9022sp@gmail.com" class="border border-green-400 text-green-400 font-mono py-3 px-8 rounded-lg hover:bg-green-400/10 transition-colors duration-300">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-gray-500 py-8 font-mono text-sm">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-4 md:hidden">
+                <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-github text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-white transition-colors duration-300"><i class="fab fa-twitter text-xl"></i></a>
+            </div>
+            <p>Designed & Built by Suraj Patel</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // JavaScript for fade-in sections on scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>
